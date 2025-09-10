@@ -11,3 +11,143 @@
     </div>
   </body>
 </html>
+<!DOCTYPE html>
+<html>
+    <!-- icon section -->
+     
+     <!-- <img class="icon-img" src="https://c1.wallpaperflare.com/preview/667/666/503/bentley-gt-coupe-rich.jpg"> -->
+     <title> MA$YNN </title>
+    <head>
+      <title>Masynn's Landing Page</title>
+      <link rel="stylesheet" href="styles.css" />
+       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   </head>
+                 <link rel="icon" type="image/x-icon" href="images/download.jpeg">
+
+  <body class="bg-blue-50 text-gray-800 p-4 font-sans">
+    <!-- All content goes here -->
+    <div id="all-contents" class="max-w-4xl mx-auto">
+      <nav>
+       <h1>Masynn's Landing Page</h1>
+        <ul id="nav-ul">
+        <li class="nav-li">
+        <a href="index.html">Home</a>
+        </li>
+        <li class="nav-li">
+  <a href="portfolio.html">Portfolio</a>
+      </li>
+</ul>
+      </nav>
+
+      <main>
+        <!-- sidebar section -->
+        <div class="sidebar">
+        <img class="sidebar-img" src="https://c1.wallpaperflare.com/preview/667/666/503/bentley-gt-coupe-rich.jpg">
+        </div>
+
+        <!-- content section -->
+        <div class="content">
+          <h2>Masynn</h2>
+          <p>Multi talented entrepreneur</p>
+        </div>
+<div class="mt-1">
+  <h3 class="text-2xl font-bold mb-4">My Photo Gallery</h3>
+  <div class="flex flex-wrap gap-4">
+    <img src="https://picsum.photos/200/200?random=1" alt="Photo 1" class="w-32 h-32 object-cover rounded-lg shadow-md">
+    <img src="https://picsum.photos/200/200?random=2" alt="Photo 2" class="w-32 h-32 object-cover rounded-lg shadow-md">
+    <img src="https://picsum.photos/200/200?random=3" alt="Photo 3" class="w-32 h-32 object-cover rounded-lg shadow-md">
+    <img src="https://picsum.photos/200/200?random=4" alt="Photo 4" class="w-32 h-32 object-cover rounded-lg shadow-md">
+    <img src="https://picsum.photos/200/200?random=5" alt="Photo 5" class="w-32 h-32 object-cover rounded-lg shadow-md">
+    <img src="https://picsum.photos/200/200?random=6" alt="Photo 6" class="w-32 h-32 object-cover rounded-lg shadow-md">
+  </div>
+</div>
+        <!-- Interests Section -->
+        <div id="interests">
+          <h3>Interests</h3>
+
+          <ul>
+            <li>Business</li>
+            <li>Sports</li>
+            <li>Traveling</li>
+          </ul>
+        </div>
+      </main>
+    </div> 
+  </body> </body>
+</html>
+  <!-- git add -A
+git commit -m "final"
+git push -->
+$(function () {
+  // initialize canvas and context when able to
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  window.addEventListener("load", loadJson);
+
+  function setup() {
+    if (firstTimeSetup) {
+      halleImage = document.getElementById("player");
+      projectileImage = document.getElementById("projectile");
+      cannonImage = document.getElementById("cannon");
+      $(document).on("keydown", handleKeyDown);
+      $(document).on("keyup", handleKeyUp);
+      firstTimeSetup = false;
+      //start game
+      setInterval(main, 1000 / frameRate);
+    }
+
+    // Create walls - do not delete or modify this code
+    createPlatform(-50, -50, canvas.width + 100, 50); // top wall
+    createPlatform(-50, canvas.height - 10, canvas.width + 100, 200, "navy"); // bottom wall
+    createPlatform(-50, -50, 50, canvas.height + 500); // left wall
+    createPlatform(canvas.width, -50, 50, canvas.height + 100); // right wall
+
+    //////////////////////////////////
+    // ONLY CHANGE BELOW THIS POINT //
+    //////////////////////////////////
+
+    // TODO 1 - Enable the Grid
+    // toggleGrid();
+
+
+    // TODO 2 - Create Platforms
+
+createPlatform(100, 20, 10, 100, "darkred"); // bright green for a finished platform
+createPlatform(500, 0, 20, 290, "black")
+createPlatform(400, 400, 200, 20, "black", 200, 1200, 2)
+createPlatform(400, 600, 200, 20, "black", 100, 850, -4)
+createPlatform(400, 200, 200, 20, "black", 500, 1100, 1)
+createPlatform(400, 500, 200, 20, "black", 150, 700, 0)
+createPlatform(400, 300, 800, 20, "black", 150, 700, 0)
+createPlatform(500, 100, 200, 20, "black", 150, 700, 0)
+    // TODO 3 - Create Collectables
+createCollectable("steve", 1350, 50);
+createCollectable("diamond", 600, 60, 0.5, 0.7);
+
+
+    // TODO 4 - Create Cannons
+createCannon("top", 200, 1000);
+createCannon("right", 300, 1000);
+createCannon("left", 400, 1000);
+
+    
+    
+    //////////////////////////////////
+    // ONLY CHANGE ABOVE THIS POINT //
+    //////////////////////////////////
+  }
+
+  registerSetup(setup);
+});
+body {
+  margin: 0px;
+}
+
+canvas {
+  background-color: rgb(255, 0, 0);
+  margin: 20px;
+}
+
+img {
+  display: none;
+}
