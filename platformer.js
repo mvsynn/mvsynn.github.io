@@ -59,3 +59,15 @@ createCannon("left", 400, 1000);
 
   registerSetup(setup);
 });
+body {
+  margin: 0px;
+}
+
+canvas {
+  background-color: rgb(255, 0, 0);
+  margin: 20px;
+}
+
+img {
+  display: none;
+}
