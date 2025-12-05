@@ -56,8 +56,9 @@
         box.on("click", handleBoxClick);
 
         // moves the Box to a new position on the screen along the X-Axis
-        function moveBoxTo(newPositionX) {
+        function moveBoxTo(newPositionX, newPositionY) {
           box.css("left", newPositionX);
+          box.css("top", newPositionY)
         }
 
         // changes the text displayed on the Box
@@ -70,10 +71,13 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-       var positionX = 0;
-       var points = 0;
-       var speed = 10;
-      
+       let positionx = 0;
+       let points = 0;
+       let speed = 10;
+       let positionY;
+       let speedY = 14;
+       let boardHeight = jQuery(window).height();
+       let randNum = Math.random() * boardWidth;
 
 
         /**
@@ -82,22 +86,22 @@
          * If the box drifts off the screen, turn it around!
          */
         function update() {
-
-          // positionX += 10;
-          moveBoxTo(positionX); // Moves box to right edge
-          positionX = positionX + speed
-       if (positionX > boardWidth) {
-         speed = speed * -1;
-        }
-
+          moveBoxTo(positionX, positionY); 
+          positionX = positionX + speed;
+          if (positionX > boardWidth) {
+          speed *= -1;
+      }
         if (positionX < 0) {
           speed *= -1;
         }
-        
-    
-        
+         positionY = positionY + speedY;
+          if (positionY > boardHeight) {
+          speedY *= -1;
       }
-      
+        if (positionY < 0) {
+          speedY *= -1
+        }
+      }
       
       /**
        * This Function will be called each time the box is clicked.
@@ -107,17 +111,18 @@
        * - move the box to the left side of the screen.
        */
       function handleBoxClick() {
-        
-        
         positionX = 0;
-      
-          changeBoxText(points++);
-    
-          speed += 3;
-      
-
+        positionY = 0;
+        points++;
+        speed = 3 * points + 10;
+        speedY = 3 * points + 10;
+         changeBoxText(points);
         
-      }})();
+      }
+      
+        
+     
+      })();
     </script>
   </body>
 </html>
